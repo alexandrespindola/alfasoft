@@ -41,21 +41,37 @@
                             @enderror
                         </div>
 
-                        {{-- <div class="flex flex-row items-center gap-3">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                for="email">
-                                E-mail:
-                            </label>
-                            <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                id="email" type="text" name="email"
-                                value="{{ old('email', $contact->email ?? '') }}">
-                        </div>
-                        <div>
-                            @error('email')
-                                @include('components.error')
-                            @enderror
-                        </div> --}}
+                        <div class="flex flex-row items-center gap-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                            for="email">
+                            E-mail:
+                        </label>
+                        <input
+                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                            id="email" type="text" name="email"
+                            value="{{ old('email', $contact->email ?? '') }}">
+                    </div>
+                    <div>
+                        @error('email')
+                            @include('components.error')
+                        @enderror
+                    </div>
+
+                    <div class="flex flex-row items-center gap-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                            for="contact">
+                            Contact:
+                        </label>
+                        <input
+                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                            id="contact" type="text" name="contact"
+                            value="{{ old('contact', $contact->contact ?? '') }}">
+                    </div>
+                    <div>
+                        @error('contact')
+                            @include('components.error')
+                        @enderror
+                    </div>
                     </div>
                 </div>
                 <div class="md:flex md:items-center">

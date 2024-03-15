@@ -25,14 +25,14 @@ class ContactRequest extends FormRequest
                 ];
             }
             case 'PUT':
-            case 'PATCH':
-            {
-                return [
-                    'name' => 'required|min:5',
-                    'contact' => ['required', 'digits:9', Rule::unique('contacts')->ignore($this->contact->id)],
-                    'email' => ['required', 'email', Rule::unique('contacts')->ignore($this->contact->id)],
-                ];
-            }
+                case 'PATCH':
+                {
+                    return [
+                        'name' => 'min:5',
+                        'contact' => ['digits:9', Rule::unique('contacts')->ignore($this->route('contact')->id)],
+                        'email' => ['email', Rule::unique('contacts')->ignore($this->route('contact')->id)],
+                    ];
+                }
             default:break;
         }
     }
