@@ -11,57 +11,55 @@ use App\Http\Requests\ContactRequest;
 class ContactController extends Controller
 {
 
+    // public function __construct()
+    // {
+    //     $this->middleware('auth', ['except' => ['index']]);
+    // }
+
     public function index(): View
     {
         $contacts = Contact::all();
         return view('index', compact('contacts'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function index2(): View
+    {
+        $contacts = Contact::all();
+        return view('contacts.index', compact('contacts'));
+    }
+
     public function create()
     {
-        //
+        return view('contacts.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(ContactRequest $request): RedirectResponse
     {
-        //
+        Contact::create($request->all());
+        return redirect()->route('contacts.index')->with('success', 'Contact created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Contact $contact)
+    public function show(Contact $contact): View
     {
-        //
+        return view('contacts.show', compact('contact'));
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Contact $contact)
+    public function edit(Contact $contact): View    {
+
+        return view('contacts.edit', compact('contact'));
+
+    }
+
+    public function update(ContactRequest $request, Contact $contact): RedirectResponse
     {
-        //
+        $contact->update($request->all());
+        return redirect()->route('contacts.index')->with('success', 'Contact updated successfully');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Contact $contact)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Contact $contact)
     {
-        //
+        $contact->delete();
+        return redirect()->route('contacts.index')->with('success', 'Contact deleted successfully');
     }
 }
