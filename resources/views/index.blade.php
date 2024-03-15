@@ -7,17 +7,15 @@
         Home - Contacts
     </h1>
 
-    {{-- @forelse ($contacts as $contact)
+    @forelse ($contacts as $contact)
         <div class="w-full">
             <div class="container mx-auto py-4 text-center">
                 <ul class="flex flex-row justify-center">
                     <li class="flex flex-row gap-3">
-                        <a href="{{ route('contacts.index', $contact->id) }}" class="flex flex-row self-center">
-                            <div class="flex flex-row gap-3">
-                                <span class="text-blue-700 font-bold">Contact name:</span>
-                                {{ $contact->name }}
-                            </div>
-                        </a>
+                        <div class="flex flex-row gap-3">
+                            <span class="text-blue-700 font-bold">Contact name:</span>
+                            {{ $contact->name }}
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -28,6 +26,6 @@
                 <p class="text-red-500 text-2xl">No notes found</p>
             </div>
         </div>
-    @endforelse --}}
+    @endforelse
 
 @endsection

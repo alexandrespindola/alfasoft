@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -12,7 +14,7 @@ class ContactController extends Controller
     public function index(): View
     {
         $contacts = Contact::all();
-        return view('contacts.index', compact('contacts'));
+        return view('index', compact('contacts'));
     }
 
     /**
