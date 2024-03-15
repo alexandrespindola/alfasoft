@@ -3,9 +3,11 @@
 @section('title', 'Edit Contact')
 
 @section('content')
-    <h1 class="bg-yellow-400 text-blue-700 text-4xl">
+<div class="mx-auto text-center">
+    <h1 class="bg-gray-100 text-blue-700 text-4xl py-10">
         Edit contact
     </h1>
+</div>
     <div class="w-full">
         <div class="container mx-auto flex flex-row justify-center py-10">
             @component('components.button')
@@ -21,12 +23,10 @@
             <form class="w-full max-w-lg mt-5" method="POST" action={{ route('contacts.update', $contact->id) }}>
                 @method('PUT')
                 @csrf
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full px-3">
-
-                        <div class="flex flex-row items-center gap-3">
-
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                <div class="flex flex-wrap mb-6">
+                    <div class="w-full">
+                        <div class="flex flex-row items-center justify-between">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 pr-7" style="width: 100px"
                                 for="name">
                                 Name:
                             </label>
@@ -41,8 +41,8 @@
                             @enderror
                         </div>
 
-                        <div class="flex flex-row items-center gap-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        <div class="flex flex-row items-center justify-between">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 pr-7" style="width: 100px"
                             for="email">
                             E-mail:
                         </label>
@@ -57,8 +57,8 @@
                         @enderror
                     </div>
 
-                    <div class="flex flex-row items-center gap-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    <div class="flex flex-row items-center justify-between">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 pr-7" style="width: 100px"
                             for="contact">
                             Contact:
                         </label>
