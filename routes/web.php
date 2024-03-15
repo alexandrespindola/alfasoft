@@ -10,12 +10,8 @@ Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('l
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
-
-
-// Route::get('/contacts', [ContactController::class, 'index2'])->name('contacts.index');
-
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [ContactController::class, 'index2'])->name('contacts.index');
+    Route::get('/dashboard', [ContactController::class, 'dashboard'])->name('contacts.index');
     Route::resource('contacts', ContactController::class)->except('index');
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });
