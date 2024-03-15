@@ -3,9 +3,11 @@
 @section('title', 'Login - Contacts')
 
 @section('content')
-    <h1 class="bg-yellow-400 text-blue-700 text-4xl">
-        Login - Contacts
-    </h1>
+    <div class="mx-auto text-center">
+        <h1 class="bg-gray-100 text-blue-700 text-4xl py-10">
+            Contacts
+        </h1>
+    </div>
 
     <div class="w-full">
         <div class="container mx-auto flex flex-row justify-center py-10">
@@ -16,7 +18,7 @@
         </div>
     </div>
 
-    <div class="container mx-auto py-16 flex flex-wrap justify-center">
+    <div class="container mx-auto py-7 flex flex-wrap justify-center">
         @forelse ($contacts as $contact)
             <div class="md:flex w-full md:w-1/4 mx-2 my-2 bg-white rounded-xl shadow-md overflow-hidden">
                 <div class="p-8">
@@ -26,20 +28,22 @@
                     <p class="mt-2 text-gray-500">{{ $contact->email }}</p>
                     <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold mt-4">Contact</div>
                     <p class="mt-2 text-gray-500">{{ $contact->contact }}</p>
-                    <a href="{{ route('contacts.edit', $contact->id) }}"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 flex flex-row gap-1">
-                        EDIT
-                        <span class="material-symbols-outlined" style="font-size: 20px">
-                            edit_square
-                        </span>
-                    </a>
-                    <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit"
-                            class="flex flex-row gap-1 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
-                            value="DELETE">
-                    </form>
+                    <div class="flex flex-row pt-3">
+                        <a href="{{ route('contacts.edit', $contact->id) }}"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 flex flex-row gap-1">
+                            EDIT
+                            <span class="material-symbols-outlined" style="font-size: 20px">
+                                edit_square
+                            </span>
+                        </a>
+                        <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit"
+                                class="flex flex-row gap-1 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
+                                value="DELETE">
+                        </form>
+                    </div>
                 </div>
             </div>
         @empty
