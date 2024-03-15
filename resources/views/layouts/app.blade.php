@@ -20,6 +20,7 @@
 
 <body class="flex flex-col" style="height: 100vh">
     @include('layouts._partials.header')
+    @include('layouts._partials.messages')
 
     <main class="flex-1">
         @yield('content')
