@@ -10,7 +10,7 @@ class ContactsTableSeeder extends Seeder
 {
     public function run(): void
     {
-        Contact::factory()->count(7)->create();
+        Contact::factory()->count(10)->create();
     }
 
 
