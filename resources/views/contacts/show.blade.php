@@ -3,11 +3,11 @@
 @section('title', 'Show Contact')
 
 @section('content')
-<div class="mx-auto text-center">
-    <h1 class="bg-gray-100 text-blue-700 text-4xl py-10">
-        {{ $contact->name }}
-    </h1>
-</div>
+    <div class="mx-auto text-center">
+        <h1 class="bg-gray-100 text-blue-700 text-4xl py-10">
+            {{ $contact->name }}
+        </h1>
+    </div>
     <div class="w-full">
         <div class="container mx-auto flex flex-row justify-center py-10">
             @component('components.button')
@@ -26,13 +26,6 @@
                 <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold mt-4">Contact</div>
                 <p class="mt-2 text-gray-500">{{ $contact->contact }}</p>
                 <div class="flex flex-row pt-3">
-                    <a href="{{ route('contacts.show', $contact->id) }}"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 flex flex-row gap-1">
-                        SHOW
-                        <span class="material-symbols-outlined" style="font-size: 20px">
-                            visibility
-                        </span>
-                    </a>
                     <a href="{{ route('contacts.edit', $contact->id) }}"
                         class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mr-2 flex flex-row gap-1">
                         EDIT
@@ -50,4 +43,4 @@
                 </div>
             </div>
         </div>
-@endsection
+    @endsection
