@@ -5,13 +5,11 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Contact;
 
-class DatabaseSeeder extends Seeder
-{
 
+class ContactsTableSeeder extends Seeder
+{
     public function run(): void
     {
-        $this->call([
-            ContactsTableSeeder::class,
-        ]);
+        Contact::factory()->count(7)->create();
     }
 }
