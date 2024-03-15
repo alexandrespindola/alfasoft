@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('title', 'Hello Laravel')
 
-    <title>Alfasot</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-
-</head>
-
-<body>
-    <h1>hello</h1>
-
-</body>
-
-</html>
+@section('content')
+    <h1 class="bg-yellow-400 text-blue-700 text-4xl">Hello Laravel</h1>
+@endsection
