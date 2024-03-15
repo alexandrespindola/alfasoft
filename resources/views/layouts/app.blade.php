@@ -14,7 +14,8 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     <!-- Material Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 
@@ -22,9 +23,9 @@
     @include('layouts._partials.header')
     @include('layouts._partials.messages')
 
-    <main class="flex-1">
-        @yield('content')
-    </main>
+        <main class="flex-1 w-full">
+            @yield('content')
+        </main>
 
     @include('layouts._partials.footer')
 

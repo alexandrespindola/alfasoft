@@ -6,6 +6,10 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', [ContactController::class, 'index'])->name('index');
 
+Route::get('/index', function () {
+    return redirect('/');
+});
+
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
