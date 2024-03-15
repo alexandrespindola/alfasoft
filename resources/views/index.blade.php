@@ -7,7 +7,7 @@
         Home - Contacts
     </h1>
 
-    @forelse ($contacts as $contact)
+    {{-- @forelse ($contacts as $contact)
         <div class="w-full">
             <div class="container mx-auto py-4 text-center">
                 <ul class="flex flex-row justify-center">
@@ -28,6 +28,6 @@
                 <p class="text-red-500 text-2xl">No notes found</p>
             </div>
         </div>
-    @endforelse
+    @endforelse --}}
 
 @endsection
